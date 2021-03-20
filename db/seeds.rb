@@ -119,17 +119,33 @@ full_stack = Course.create(
 
 # create Mods
 mod_0_frontend_js = Mod.create(
-    title: "mod 0",
-    description: "Machine Setup",
+    title: "Machine Setup",
+    number: 0,
+    description: "In this mod you will set up your computer. Expect about 2 - 3 hours worth of walkthroughs to get started. Feel free to reach out to an instructor for help if you get stuck",
     course: frontend_javascript
 )
 
+mod_0_frontend_js = Mod.create(
+    title: "Introduction & Command Line",
+    number: 1,
+    description: "In this mod you will learn how to navigate around your computer efficiently",
+    course: frontend_javascript
+)
+
+mod_0_frontend_js = Mod.create(
+    title: "Javascript Basics 1",
+    number: 2,
+    description: "In this mod you will begin to learn Javascript",
+    course: frontend_javascript
+)
 # create learning Objective
 machine_setup = LearningObjective.create(
     mod: mod_0_frontend_js,
     description: "Let's get that machine up and running so you can code",
     title: "Machine Setup",
 )
+
+
 
 
 # create lesson plan
