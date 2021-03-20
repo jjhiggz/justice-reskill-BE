@@ -1,3 +1,10 @@
+
+Video.destroy_all
+Lesson.destroy_all
+LearningObjective.destroy_all
+Mod.destroy_all
+Course.destroy_all
+
 # create Videos
 Video.create({
     created_by: "higgz",
@@ -93,6 +100,21 @@ Video.create({
 frontend_javascript = Course.create(
     title: "Frontend( Vanilla JS )",
     description: "In this course you will learn how to develop for the web using HTML, CSS, and Vanilla Javascript"
+)
+
+frontend_react = Course.create(
+    title: "Frontend( React )",
+    description: "In this course you will learn one of the most popular javascript frameworks.... React."
+)
+
+backend = Course.create(
+    title: "Backend( Node )",
+    description: "In this course you will learn how to do backend development using Node, Express, Postgresql, and MongoDB"
+)
+
+full_stack = Course.create(
+    title: "Full Stack",
+    description: "In this course you are going to tie together EVERYTHING YOU EVER LEARNED in order to make full stack applications"
 )
 
 # create Mods
