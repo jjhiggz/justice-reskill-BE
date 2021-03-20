@@ -3,7 +3,7 @@ class AuthenticationController < ApplicationController
         @user = !User.find_by({email: user_params[:email]})
         if !@user
         
-        elsif
+        elseif
 
         end
     end
