@@ -4,13 +4,12 @@ class CoursesController < ApplicationController
   # GET /courses
   def index
     @courses = Course.all
-
     render json: @courses
   end
 
   # GET /courses/1
   def show
-    render json: @course
+    render json: @course, include: :mods
   end
 
   # POST /courses
