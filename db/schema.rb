@@ -10,10 +10,57 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_17_063313) do
+ActiveRecord::Schema.define(version: 2021_03_19_013722) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "courses", force: :cascade do |t|
+    t.string "title"
+    t.text "description"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "learning_objectives", force: :cascade do |t|
+    t.bigint "mod_id", null: false
+    t.string "title"
+    t.text "description"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["mod_id"], name: "index_learning_objectives_on_mod_id"
+  end
+
+  create_table "lessons", force: :cascade do |t|
+    t.bigint "learning_objective_id", null: false
+    t.string "drive_link"
+    t.string "youtube_link"
+    t.string "github_link"
+    t.string "doc_link"
+    t.string "slides_link"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.string "title"
+    t.string "description"
+    t.index ["learning_objective_id"], name: "index_lessons_on_learning_objective_id"
+  end
+
+  create_table "mods", force: :cascade do |t|
+    t.bigint "course_id", null: false
+    t.string "title"
+    t.text "description"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["course_id"], name: "index_mods_on_course_id"
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string "email"
+    t.string "password_digest"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["email"], name: "index_users_on_email", unique: true
+  end
 
   create_table "videos", force: :cascade do |t|
     t.string "created_by"
@@ -24,4 +71,7 @@ ActiveRecord::Schema.define(version: 2021_03_17_063313) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  add_foreign_key "learning_objectives", "mods"
+  add_foreign_key "lessons", "learning_objectives"
+  add_foreign_key "mods", "courses"
 end

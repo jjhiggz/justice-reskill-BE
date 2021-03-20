@@ -1,0 +1,17 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  learning_objective: one
+  drive_link: MyString
+  youtube_link: MyString
+  github_link: MyString
+  doc_link: MyString
+  slides_link: MyString
+
+two:
+  learning_objective: two
+  drive_link: MyString
+  youtube_link: MyString
+  github_link: MyString
+  doc_link: MyString
+  slides_link: MyString
