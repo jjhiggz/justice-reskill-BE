@@ -10,7 +10,7 @@ class ModsController < ApplicationController
 
   # GET /mods/1
   def show
-    render json: @mod
+    render json: @mod, include: :learning_objectives
   end
 
   # POST /mods
