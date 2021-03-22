@@ -46,6 +46,6 @@ class LessonsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def lesson_params
-      params.require(:lesson).permit(:learning_objective_id, :drive_link, :youtube_link, :github_link, :doc_link, :slides_link)
+      params.require(:lesson).permit(:learning_objective_id, :drive_link, :youtube_link, :github_link, :doc_link, :slides_link, :title, :description)
     end
 end
