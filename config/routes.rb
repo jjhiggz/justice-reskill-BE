@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :resources
+  resources :assessments
   resources :lessons
   resources :learning_objectives
   resources :mods
