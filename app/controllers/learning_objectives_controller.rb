@@ -10,7 +10,7 @@ class LearningObjectivesController < ApplicationController
 
   # GET /learning_objectives/1
   def show
-    render json: @learning_objective, include: :lessons
+    render json: @learning_objective, include: [:lessons, :resources, :assessments]
   end
 
   # POST /learning_objectives
